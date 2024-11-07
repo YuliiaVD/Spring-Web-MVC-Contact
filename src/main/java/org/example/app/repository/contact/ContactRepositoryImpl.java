@@ -78,7 +78,7 @@ public class ContactRepositoryImpl implements ContactRepository{
         Optional<Contact> optional;
         try {
             Session session = sessionFactory.getCurrentSession();
-            String hql = "FROM Contact u WHERE u.id = :id";
+            String hql = "FROM Contact c WHERE c.id = :id";
             Query<Contact> query = session.createQuery(hql, Contact.class);
             query.setParameter("id", id);
             optional = query.uniqueResultOptional();
